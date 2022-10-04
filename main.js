@@ -20,6 +20,8 @@ function ujKedvencElem(cim){
     return label;
 }
 
+
+
 function kedvencekBetoltese()
 {
     let szuloElem = document.getElementById('lista');
@@ -29,6 +31,13 @@ function kedvencekBetoltese()
         let listaElem = document.createElement('li');
         //listaElem.textContent = k;
         listaElem.appendChild(ujKedvencElem(k));
+        let torlesGomb = document.createElement('button');
+        torlesGomb.textContent = 'X';
+        function torlesKatt(){
+            listaElem.remove();
+        }
+        torlesGomb.addEventListener('click', torlesKatt);
+        listaElem.appendChild(torlesGomb);
         szuloElem.appendChild(listaElem);
     }
 }
